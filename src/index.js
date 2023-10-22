@@ -152,7 +152,7 @@ const allBeers = [
    const navImages = document.querySelectorAll("nav img");
 navImages.forEach((img) => {
   img.height = "400";
-  img.width = "200";
+  img.width = "100";
 });
 });
 
