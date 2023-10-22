@@ -143,9 +143,17 @@ const allBeers = [
   <h3> ${allBeers.name}</h3>
    <p>${allBeers.description}</p>
    <img src= "${allBeers.image_url}" alt= "${allBeers.name}">
-   <p>Reviews: ${allBeers.reviews}</p>
+   <p>Reviews:</p>
+<ul>
+  ${allBeers.reviews.map((review) => `<li>${review}</li>`).join("")}
+</ul>
    `;
    nav.appendChild(beerDiv);
+   const navImages = document.querySelectorAll("nav img");
+navImages.forEach((img) => {
+  img.height = "400";
+  img.width = "200";
+});
 });
 
 const reviewForm = document.querySelector('.review-form');
@@ -162,4 +170,4 @@ newReview.textContent = review.value;
 const reviewList = document.getElementById("review-list");
 reviewList.appendChild(newReview);
 
-})
+});
