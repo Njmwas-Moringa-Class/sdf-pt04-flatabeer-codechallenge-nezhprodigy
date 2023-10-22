@@ -142,7 +142,7 @@ const allBeers = [
   beerDiv.innerHTML = `
   <h3> ${allBeers.name}</h3>
    <p>${allBeers.description}</p>
-   <img "${allBeers.image_url}" alt= "${allBeers.name}">
+   <img src= "${allBeers.image_url}" alt= "${allBeers.name}">
    <p>Reviews: ${allBeers.reviews}</p>
    `;
    nav.appendChild(beerDiv);
@@ -157,12 +157,9 @@ reviewForm.addEventListener('submit', event => {
 
   const review = document.querySelector('.review');
 
-  const newReview = document.createElement("div");
-  newReview.innerHTML = `
-  <p>${review.value}</p>
-  `;
-  reviewForm.appendChild(newReview);
-
-review.value = ''
+  const newReview = document.createElement("li");
+newReview.textContent = review.value;
+const reviewList = document.getElementById("review-list");
+reviewList.appendChild(newReview);
 
 })
